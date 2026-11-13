@@ -2,6 +2,7 @@
 date = '2026-11-13T15:50:06Z'
 draft = false
 title = 'Learning Rust 0.1'
+tags = ['Learn','Rust']
 +++
 
 # Phase 0 and Module 1: Setup and Rust Basics for a Java Developer
@@ -21,15 +22,15 @@ cargo --version
 
 Here's how the Rust tooling maps to what you know from Java:
 
-| Java | Rust |
-|---|---|
-| Maven / Gradle | `cargo` (build tool, dependency manager, test runner, and docs generator in one) |
-| `pom.xml` / `build.gradle` | `Cargo.toml` |
-| Maven Central | crates.io |
-| JAR library | crate |
-| `javac` | `rustc` (you'll rarely call it directly) |
-| Checkstyle / SpotBugs | `clippy` |
-| IntelliJ inspections | `rust-analyzer` (install it in VS Code or use RustRover) |
+| Java                       | Rust                                                                             |
+| -------------------------- | -------------------------------------------------------------------------------- |
+| Maven / Gradle             | `cargo` (build tool, dependency manager, test runner, and docs generator in one) |
+| `pom.xml` / `build.gradle` | `Cargo.toml`                                                                     |
+| Maven Central              | crates.io                                                                        |
+| JAR library                | crate                                                                            |
+| `javac`                    | `rustc` (you'll rarely call it directly)                                         |
+| Checkstyle / SpotBugs      | `clippy`                                                                         |
+| IntelliJ inspections       | `rust-analyzer` (install it in VS Code or use RustRover)                         |
 
 Create your first project:
 
@@ -40,6 +41,7 @@ cargo run
 ```
 
 The commands you'll use every day are:
+
 - **`cargo check`**: type-checks your code quickly without building a binary. Use this constantly.
 - **`cargo run`**: builds and runs the program.
 - **`cargo test`**: runs your tests.
@@ -77,14 +79,14 @@ This is idiomatic Rust. It's commonly used for conversions like this, so you don
 
 ### 2. Types: more explicit than Java
 
-| Java | Rust | Notes |
-|---|---|---|
-| `byte`, `short`, `int`, `long` | `i8`, `i16`, `i32`, `i64`, `i128` | Signed integers |
-| (none) | `u8`, `u16`, `u32`, `u64`, `u128` | Unsigned types exist in Rust |
-| (none) | `usize`, `isize` | Pointer-sized; used for indexing and lengths |
-| `float`, `double` | `f32`, `f64` | |
-| `boolean` | `bool` | |
-| `char` (2 bytes, UTF-16) | `char` (4 bytes, any Unicode scalar value) | |
+| Java                           | Rust                                       | Notes                                        |
+| ------------------------------ | ------------------------------------------ | -------------------------------------------- |
+| `byte`, `short`, `int`, `long` | `i8`, `i16`, `i32`, `i64`, `i128`          | Signed integers                              |
+| (none)                         | `u8`, `u16`, `u32`, `u64`, `u128`          | Unsigned types exist in Rust                 |
+| (none)                         | `usize`, `isize`                           | Pointer-sized; used for indexing and lengths |
+| `float`, `double`              | `f32`, `f64`                               |                                              |
+| `boolean`                      | `bool`                                     |                                              |
+| `char` (2 bytes, UTF-16)       | `char` (4 bytes, any Unicode scalar value) |                                              |
 
 Watch out for these differences:
 
@@ -209,6 +211,7 @@ Do these in a single project (`cargo new module1_exercises`) as separate functio
 ## Mini-Project: Number Guessing Game
 
 Build a CLI game with these requirements:
+
 - The program picks a random number from 1 to 100.
 - The player keeps guessing. After each guess, print "Too high," "Too low," or "Correct!"
 - If the input isn't a number, print a friendly message instead of crashing.
@@ -247,4 +250,3 @@ If `cargo add` installs a version of `rand` older than 0.9, the API is `rand::th
 **You're done when:** the game works, it handles bad input without crashing, `cargo clippy` shows no warnings, and `cargo fmt` has been run.G
 
 ---
-

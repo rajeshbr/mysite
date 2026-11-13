@@ -19,3 +19,6 @@ cache/filecache/_gen/
 .claude/
 dump.txt
 dump.md
+node_modules/
+package.json
+package-lock.json
