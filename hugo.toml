@@ -2,3 +2,7 @@ baseURL = 'https://rajeshbr.github.io/'
 locale = 'en-us'
 title = 'Namaste!!'
 theme = 'hugo-PaperMod'
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
